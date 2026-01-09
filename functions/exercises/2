@@ -1,0 +1,9 @@
+def eve(a): 
+	if a % 2 == 1: 
+		print('Odd number! ')
+	else: 
+		print('Even number! ')
+
+q = int(input('Input any number: '))
+eve(q)
+

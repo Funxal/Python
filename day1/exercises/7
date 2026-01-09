@@ -1,0 +1,4 @@
+first = int(input('Input your first number: '))
+second = int(input('Input your second number: '))
+
+print('The sum of your inputs is', first+second)

@@ -1,0 +1,12 @@
+def maxi(a, b, c): 
+	if a > c and a > b: 
+		return a 
+	elif b > c: 
+		return b 
+	else: 
+		return c
+
+q = int(input('First number: '))
+w = int(input('Second number: '))
+y = int(input('Third number: '))
+print(maxi(q, w, y))

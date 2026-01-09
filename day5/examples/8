@@ -1,0 +1,4 @@
+student = {"name":"Habibah", "age": 23}
+
+for key in student:
+    print(key)

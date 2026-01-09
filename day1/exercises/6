@@ -1,0 +1,5 @@
+food = input('What is your favourite food? ')
+colour = input('What is your favourite colour? ')
+num = 52
+print('Your favourite food and colour is',food,'and',colour,'respectively.')
+

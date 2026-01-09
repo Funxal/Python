@@ -1,0 +1,8 @@
+a = 5
+b = 10
+
+swap = a
+a = b
+b = swap
+
+print(a,b)

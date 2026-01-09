@@ -1,0 +1,4 @@
+l = 'Omolara'
+f = 'Habibah'
+
+print(f,l)

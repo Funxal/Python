@@ -1,0 +1,7 @@
+def expo(a, b): 
+	return a ** b
+
+q = int(input('Enter first number: '))
+w = int(input('Enter second number: '))
+
+print(expo(q, w))

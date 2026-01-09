@@ -1,0 +1,5 @@
+name = input("Enter your name: ")
+age = input("Enter your age: ")
+hobby = input("Enter your hobby: ")
+
+print(f"My name is {name.title()}, I am {age} years old, and I enjoy {hobby.lower()}.")

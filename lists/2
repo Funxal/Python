@@ -1,0 +1,9 @@
+sel = ["1. Add items", "2. Remove items", "3. View lists", "4. Exit"]
+opt = []
+list
+
+print("--- SHOPPING LIST MENU ---")
+while list != 4: 
+for i in sel: print(i) 
+
+

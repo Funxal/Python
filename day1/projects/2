@@ -1,0 +1,7 @@
+#Age calculator
+c_year = int(input('What is the current year right now? '))
+birth_year = int(input('What is your birth year? '))
+
+age = c_year-birth_year
+
+print('You are', age, 'years old')

@@ -1,0 +1,11 @@
+#Asks user for name,age,location and favourite hobby.
+
+name = input('What is your name?')
+age = int(input('How old are you?'))
+location = input('What is the name of your location?')
+hobby = input('What is your favourite hobby?')
+
+print(f'Your name is {name}.\n'
+f'You are {age} years old.\n'
+f'You are currently at {location}.\n'
+f'Your favoirite hobby is {hobby}.\n')

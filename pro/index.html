@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Habibah Omolara | AgTech & Animal Physiology</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-green: #2d5a27;
+            --tech-teal: #20b2aa;
+            --earth-brown: #6b4f4f;
+            --light-bg: #fdfdfb;
+            --dark-text: #1a1a1a;
+            --glass: rgba(255, 255, 255, 0.8);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* --- Background Animation --- */
+        .bg-blobs {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            filter: blur(80px);
+            opacity: 0.4;
+        }
+
+        .blob {
+            position: absolute;
+            background: var(--primary-green);
+            border-radius: 50%;
+            width: 400px;
+            height: 400px;
+            animation: move 20s infinite alternate;
+        }
+
+        @keyframes move {
+            from { transform: translate(-10%, -10%); }
+            to { transform: translate(20%, 20%); }
+        }
+
+        /* --- Navigation --- */
+        nav {
+            padding: 1.5rem 10%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            background: var(--glass);
+            backdrop-filter: blur(10px);
+            z-index: 100;
+        }
+
+        .logo {
+            font-weight: 800;
+            font-size: 1.2rem;
+            color: var(--primary-green);
+            letter-spacing: -1px;
+        }
+
+        /* --- Hero Section --- */
+        header {
+            height: 90vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 10%;
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 8vw, 5rem);
+            margin-bottom: 1rem;
+            line-height: 1.1;
+        }
+
+        .typewriter {
+            font-size: 1.2rem;
+            color: var(--earth-brown);
+            font-weight: 600;
+            min-height: 1.5em;
+        }
+
+        .location {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            color: #666;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        /* --- Sections --- */
+        section {
+            padding: 5rem 10%;
+        }
+
+        .section-title {
+            font-family:'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 2.5rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -10px;
+            width: 50px;
+            height: 4px;
+            background: var(--tech-teal);
+        }
+
+        /* --- Expertise Grid --- */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary-green);
+        }
+
+        .card h3 {
+            color: var(--primary-green);
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
+
+        /* --- About Stats --- */
+        .about-flex {
+            display: flex;
+            gap: 4rem;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .highlight {
+            color: var(--primary-green);
+            font-weight: 700;
+        }
+
+        /* --- Contact --- */
+        .cta-box {
+            background: var(--primary-green);
+            color: white;
+            padding: 4rem;
+            border-radius: 30px;
+            text-align: center;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: white;
+            color: var(--primary-green);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            margin-top: 2rem;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
+            background: var(--tech-teal);
+            color: white;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem;
+            font-size: 0.8rem;
+            color: #888;
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 768px) {
+            header { height: auto; padding: 100px 10%; }
+            .about-flex { gap: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="bg-blobs">
+        <div class="blob"></div>
+    </div>
+
+    <nav>
+        <div class="logo">HAB_OMOLARA</div>
+        <div class="location">📍 Abeokuta, Ogun State</div>
+    </nav>
+
+    <header>
+        <p style="text-transform: uppercase; letter-spacing: 3px; font-size: 0.8rem; margin-bottom: 1rem;">Welcome to the intersection of Bio & Tech</p>
+        <h1 class="hero-title">Habibah Omolara</h1>
+        <div class="typewriter" id="typewriter"></div>
+        <p class="location">Federal University Of Agriculture, Abeokuta (FUNAAB) | G-Farms</p>
+    </header>
+
+    <section id="about">
+        <div class="about-flex">
+            <div class="about-text">
+                <h2 class="section-title">Bridging Worlds</h2>
+                <p>I am a <span class="highlight">Zoologist and Animal Physiologist</span> with a passion for digital transformation. By combining my biological background with <span class="highlight">Programming and AgTech</span>, I work toward creating sustainable, data-driven farming solutions at G-Farms.</p>
+                <br>
+                <p>Whether I'm analyzing animal physiology or writing code, my goal is the same: <strong>Efficient, Organic, and Intelligent Agriculture.</strong></p>
+            </div>
+        </div>
+    </section>
+
+    <section id="expertise">
+        <h2 class="section-title">Core Expertise</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>The Scientist</h3>
+                <p>Specialized in Animal Physiology and Zoology. Understanding the biological foundations of livestock for better health and yield.</p>
+            </div>
+            <div class="card">
+                <h3>The Farmer</h3>
+                <p>Practicing organic farming at G-Farms, ensuring sustainable food production that respects the ecosystem.</p>
+            </div>
+            <div class="card">
+                <h3>The Programmer</h3>
+                <p>Leveraging Python and technology to build smart systems for agricultural monitoring and data analysis.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="cta-box">
+            <h2>Let's innovate agriculture together</h2>
+            <p>Currently connecting with 200+ professionals in the AgTech space.</p>
+            <a href="https://www.linkedin.com/in/habibah-omolara" class="btn" target="_blank">Connect on LinkedIn</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Habibah Omolara. Optimized for Growth & Innovation.</p>
+    </footer>
+
+    <script>
+        // Typewriter Effect
+        const textElement = document.getElementById('typewriter');
+        const professions = [
+            "Zoologist",
+            "Animal Physiologist",
+            "Organic Farmer",
+            "AgTech Entrepreneur",
+            "Programmer",
+            "Technology Enthusiast"
+        ];
+        
+        let index = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+
+        function type() {
+            const current = professions[index];
+            if (isDeleting) {
+                textElement.textContent = current.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                textElement.textContent = current.substring(0, charIndex + 1);
+                charIndex++;
+            }
+
+            let typeSpeed = isDeleting ? 50 : 100;
+
+            if (!isDeleting && charIndex === current.length) {
+                isDeleting = true;
+                typeSpeed = 2000; // Pause at end
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                index = (index + 1) % professions.length;
+                typeSpeed = 500;
+            }
+
+            setTimeout(type, typeSpeed);
+        }
+
+        document.addEventListener('DOMContentLoaded', type);
+    </script>
+</body>
+</html>

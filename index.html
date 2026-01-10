@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PyScript Calculator</title>
+    
+    <link rel="stylesheet" href="https://pyscript.net/releases/2024.1.1/core.css">
+    <script type="module" src="https://pyscript.net/releases/2024.1.1/core.js"></script>
+
+    <style>
+        body { background-color: #dab1da; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; font-family: 'Segoe UI', sans-serif; }
+        .calculator { background: #f0f0f3; padding: 25px; border-radius: 30px; width: 280px; }
+        #display { width: 100%; height: 60px; background: #f0f0f3; border: none; border-radius: 15px; box-shadow: inset 6px 6px 12px #bebebe, inset -6px -6px 12px #ffffff; text-align: right; padding: 0 20px; font-size: 2rem; color: #444; margin-bottom: 20px; box-sizing: border-box; }
+        .buttons { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; }
+        button { width: 55px; height: 55px; border-radius: 50%; border: none; background: #f0f0f3; box-shadow: 6px 6px 12px #bebebe, -6px -6px 12px #ffffff; font-size: 1.1rem; color: #555; cursor: pointer; }
+        button:active { box-shadow: inset 4px 4px 8px #bebebe, inset -4px -4px 8px #ffffff; }
+        .equal { grid-column: span 2; width: 125px; border-radius: 30px; background-color: #e6b3cc; }
+    </style>
+</head>
+<body>
+
+    <div class="calculator">
+        <input type="text" id="display" value="0" readonly>
+        <div class="buttons">
+            <button py-click="clear_screen">clr</button>
+            <button py-click="delete_char">DEL</button>
+            <button py-click='add_to_display("%")'>%</button>
+            <button py-click='add_to_display("/")'>/</button>
+
+            <button py-click='add_to_display("7")'>7</button>
+            <button py-click='add_to_display("8")'>8</button>
+            <button py-click='add_to_display("9")'>9</button>
+            <button py-click='add_to_display("*")'>*</button>
+
+            <button py-click='add_to_display("4")'>4</button>
+            <button py-click='add_to_display("5")'>5</button>
+            <button py-click='add_to_display("6")'>6</button>
+            <button py-click='add_to_display("-")'>-</button>
+
+            <button py-click='add_to_display("1")'>1</button>
+            <button py-click='add_to_display("2")'>2</button>
+            <button py-click='add_to_display("3")'>3</button>
+            <button py-click='add_to_display("+")'>+</button>
+
+            <button py-click='add_to_display(".")'>.</button>
+            <button py-click='add_to_display("0")'>0</button>
+            <button class="equal" py-click="calculate">=</button>
+        </div>
+    </div>
+
+    <script type="py">
+        from pyscript import document
+
+        display = document.querySelector("#display")
+
+        def add_to_display(event):
+            # event.target.innerText gets the text from the clicked button
+            char = event.target.innerText
+            if display.value == "0":
+                display.value = char
+            else:
+                display.value += char
+
+        def clear_screen(event):
+            display.value = "0"
+
+        def delete_char(event):
+            if len(display.value) > 1:
+                display.value = display.value[:-1]
+            else:
+                display.value = "0"
+
+        def calculate(event):
+            try:
+                # Python's eval function handles the math!
+                result = eval(display.value)
+                display.value = str(result)
+            except Exception:
+                display.value = "Error"
+    </script>
+
+</body>
+</html>

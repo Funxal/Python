@@ -1,3 +1,5 @@
+let display = document.getElementById('result');
+
 function appendToDisplay(input) {
     if (display.value === "0") {
         display.value = input;
